@@ -5,9 +5,12 @@ All notable changes to the Music Club Discord Bot will be documented in this fil
 ## Unreleased
 
 - **To Do**: _Add !thisweek / !lastweek / !nextweek which posts all of that week's music_
-- **To Do**: _Add ability to adjust setup features (which days of the week bot triggers, etc)_
+- **To Do**: _Add ability to adjust setup features_
 - **To Do**: _Change !fixdate to check the worksheet and verify the date is there before changing_
-- **To Do**: _Change the way I'm handling the dockerization for allowing restarts_
+- **To Do**: _Change the way I'm handling the dockerization to allow restarts_
+
+### 0.6.3
+- Changed midnight tasks to allow for arbitrary dates.
 
 ### 0.6.2
 

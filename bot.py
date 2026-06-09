@@ -17,7 +17,7 @@ from settings import *
 
 discord.VoiceClient.warn_nacl = False
 
-VERSION = "0.6.1"
+VERSION = "0.6.3"
 
 # Album Days
 TODAY = 0       
@@ -97,7 +97,6 @@ def get_gif(search_term):
         top_8gifs = json.loads(r.content)
     else:
         top_8gifs = None
-
     return top_8gifs
 
 # --- Midnight Tasks ----------------------------------------------------------------------------- #
@@ -128,7 +127,8 @@ async def called_once_a_day_at_midnight():
     weekday = datetime.now().weekday()
 
     #if weekday in {0, 2, 4}:
-    if weekday in {0, 3}:
+    #if weekday in {0, 3}:
+    if musheet.find(date_str):
         file = open('date.txt', 'w+') 
         file.write(date_str)
         logger.info(f"Updated date.txt: {date_str}, {weekday}")
@@ -362,7 +362,7 @@ async def on_command_error(ctx, error):
 
 # --- Utility Commands --------------------------------------------------------------------------- #        
 # Fixtitle: in case the midnight task did not complete for some reason or a title change is necessary
-@bot.command(aliases=['manual'])
+@bot.command(aliases=['settitle', 'manual'])
 async def fixtitle(ctx):
 
     latest_date = check_date()
